@@ -80,7 +80,7 @@ class Pelicula extends BaseController
       return redirect()->back()->withInput();
 
     }
-   return redirect()->to('/dashboard/pelicula')->with('Mensaje','Registro creado correctamente');
+   return redirect()->to('/dashboard/pelicula')->with('mensaje','Registro creado correctamente');
   }
 
 
@@ -127,7 +127,7 @@ class Pelicula extends BaseController
   $peliculaModel = new PeliculaModel();
   $peliculaModel->delete($id);
 
-  session()->setFlashdata('Mensaje', 'Registro eliminado correctamente'); // otra manera de mostrar el mensaje flash
+  session()->setFlashdata('mensaje', 'Registro eliminado correctamente'); // otra manera de mostrar el mensaje flash
 
  // return redirect()->to('/dashboard/pelicula')->with('Mensaje','Registro eliminado correctamente');
   return redirect()->to('/dashboard/pelicula');

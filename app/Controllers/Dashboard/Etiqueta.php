@@ -110,7 +110,7 @@ class Etiqueta extends BaseController
   $etiquetaModel = new EtiquetaModel();
   $etiquetaModel->delete($id);
 
-  session()->setFlashdata('Mensaje', 'Registro eliminado correctamente'); // otra manera de mostrar el mensaje flash
+  session()->setFlashdata('mensaje', 'Registro eliminado correctamente'); // otra manera de mostrar el mensaje flash
 
 
   return redirect()->to('/dashboard/etiqueta');

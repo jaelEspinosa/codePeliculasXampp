@@ -51,7 +51,7 @@ class Categoria extends BaseController
       ]);
       return redirect()->back()->withInput();
     }
-    return redirect()->to('/dashboard/categoria')->with('Mensaje','Registro Creado correctamente');
+    return redirect()->to('/dashboard/categoria')->with('mensaje','Registro Creado correctamente');
   }
 
 
@@ -77,7 +77,7 @@ class Categoria extends BaseController
       return redirect()->back()->withInput();
 
     }
-    return redirect()->to('/dashboard/categoria')->with('Mensaje','Registro actualizado correctamente');
+    return redirect()->to('/dashboard/categoria')->with('mensaje','Registro actualizado correctamente');
   }
 
  public function delete($id) 
@@ -85,7 +85,7 @@ class Categoria extends BaseController
   $categoriaModel = new CategoriaModel();
   $categoriaModel->delete($id);
 
-  session()->setFlashdata('Mensaje', 'Registro eliminado correctamente'); // otra manera de mostrar el mensaje flash
+  session()->setFlashdata('mensaje', 'Registro eliminado correctamente'); // otra manera de mostrar el mensaje flash
 
   //return redirect()->to('/dashboard/categoria')->with('Mensaje','Registro eliminado correctamente');
   return redirect()->to('/dashboard/categoria');
