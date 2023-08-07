@@ -8,7 +8,7 @@
     <!-- Bootstrap -->
 
     <link rel="stylesheet" href="<?= base_url() ?>bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>bootstrap/css/globalStyle.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/globalStyle.css">
     <script src="<?= base_url() ?>bootstrap/js/bootstrap.min.js"></script>
 
     <!-- font-awesome-icons -->
