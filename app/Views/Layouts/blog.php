@@ -22,7 +22,7 @@
 <body>
   
     <div class="container mt-3">
-    <h2 class="text-secondary">Admin<span class="text-primary">Panel</span></h2>
+    <h2 class="text-secondary">Peliculas<span class="text-primary">Blog</span></h2>
         <div class="mx-5 mt-2 d-flex align-items-center justify-content-around">
           
 
@@ -35,17 +35,12 @@
         <div class="collapse navbar-collapse menu-movil" id="my-navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="<?= base_url()?>dashboard/pelicula" class="nav-link <?= (strpos(uri_string(), 'dashboard/pelicula') !== false) ? 'active activa' : '' ?>">Películas</a>
+                    <a  class="nav-link" href="">Películas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url()?>dashboard/categoria" class="nav-link <?= (strpos(uri_string(), 'dashboard/categoria') !== false) ? 'active activa' : '' ?>">Categorias</a>
+                    <a href="<?= base_url()?>dashboard/pelicula" class="nav-link <?=session('type') !== 'admin' ? 'disabled':'' ?>">AdminPanel</a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?= base_url()?>dashboard/etiqueta" class="nav-link <?= (strpos(uri_string(), 'dashboard/etiqueta') !== false) ? 'active activa' : '' ?>">Etiquetas</a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url()?>blog" class="nav-link">Blog</a>
-                </li>
+               
                 <li class="nav-item">
                   <a class="movil-solo" href="<?= base_url() . 'logout' ?>">
                   <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Logout
@@ -60,9 +55,18 @@
     
     <h5 class="d-flex align-items-start gap-1 text-primary"><i class="fa fa-user" aria-hidden="true"></i>
     <?= session('username') ?></h5>
-    <a class="btn btn-sm btn-outline btn-primary desk-solo" href="<?= base_url() . 'logout' ?>">
-        <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Logout
-    </a>
+    <?php if(session('username')):?>
+        <a class="btn btn-sm btn-outline btn-primary desk-solo" href="<?= base_url() . 'logout' ?>">
+            <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Logout
+        </a>
+    <?php endif?>
+    <?php if(session('username')== ''):?>
+        <a class="btn btn-sm btn-outline btn-primary desk-solo" href="<?= base_url() . 'login' ?>">
+            <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Login
+        </a>
+    <?php endif?>
+
+
 </div>
 
 <div class="border shadow-lg mb-5"></div>

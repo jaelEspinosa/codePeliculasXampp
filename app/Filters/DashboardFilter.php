@@ -28,9 +28,15 @@ class DashboardFilter implements FilterInterface
         if(!session('username')) {
             return redirect()->to(route_to('usuario.login'));
         }
+
+        if(session('type') == 'user') {
+            return redirect()->to(base_url().'blog');
+          }
+        
         if(session('type') != 'admin') {
           return redirect()->to(route_to('usuario.login'));
         }
+
     }
 
     /**

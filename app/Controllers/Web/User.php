@@ -50,7 +50,12 @@ class User extends BaseController
         session()->set('type', $user['type']);
 
          // login ok redireccionamos al dashboard
-         return redirect()->to('dashboard/categoria')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
+
+         if($user['type']=='admin'){
+           return redirect()->to('dashboard/categoria')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
+          }
+          
+          return redirect()->to('blog')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
       }
          //contraseña fallida
         return redirect()->back()->with('Mensaje', 'usuario y/o contraseña no válidos');
