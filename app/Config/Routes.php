@@ -64,7 +64,7 @@ $routes->group('dashboard', function($routes){
 
 $routes->group('blog', function($routes){
 
-    $routes->presenter('', ['only' => ['index','show'], 'controller' => 'Blog\Pelicula']);
+    $routes->presenter('pelicula', ['only' => ['index','show'], 'controller' => 'Blog\Pelicula']);
 });
 
 $routes->group('api', ['namespace' => 'App\Controllers\Api'],function($routes){

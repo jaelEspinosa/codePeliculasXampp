@@ -12,11 +12,8 @@
         </div>
         <p class="card-text"><?=$p['description']?></p>
         </div>
-        <a href="" class="btn btn-sm btn-outline-secondary">Ver</a>
+        <a href="<?=base_url().'blog/pelicula/show/'. $p['id']?>" class="btn btn-sm btn-outline-secondary">Ver</a>
     </div>
-
-    
-
 <?php endforeach?>    
 </div>
 <?= $pager->links() ?>

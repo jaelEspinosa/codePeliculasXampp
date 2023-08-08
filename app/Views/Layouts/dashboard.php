@@ -44,7 +44,7 @@
                     <a href="<?= base_url()?>dashboard/etiqueta" class="nav-link <?= (strpos(uri_string(), 'dashboard/etiqueta') !== false) ? 'active activa' : '' ?>">Etiquetas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url()?>blog" class="nav-link">Blog</a>
+                    <a href="<?= base_url()?>blog/pelicula" class="nav-link">Blog</a>
                 </li>
                 <li class="nav-item">
                   <a class="movil-solo" href="<?= base_url() . 'logout' ?>">

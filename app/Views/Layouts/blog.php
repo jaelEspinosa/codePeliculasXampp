@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse menu-movil" id="my-navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a  class="nav-link" href="">Películas</a>
+                    <a  class="nav-link" href="<?=base_url().'blog/pelicula'?>">Películas</a>
                 </li>
                 <li class="nav-item">
                     <a href="<?= base_url()?>dashboard/pelicula" class="nav-link <?=session('type') !== 'admin' ? 'disabled':'' ?>">AdminPanel</a>
@@ -52,9 +52,10 @@
         </div>
         </div>
     </nav>
-    
+    <?php if(session('username')):?>
     <h5 class="d-flex align-items-start gap-1 text-primary"><i class="fa fa-user" aria-hidden="true"></i>
     <?= session('username') ?></h5>
+    <?php endif?>
     <?php if(session('username')):?>
         <a class="btn btn-sm btn-outline btn-primary desk-solo" href="<?= base_url() . 'logout' ?>">
             <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Logout
@@ -81,8 +82,6 @@
                     <?= view('partials/_session') ?>
                 </div>
                 <?php endif ?>
-                
-                
                 
                 <?= $this->renderSection('contenido') ?>
                 
