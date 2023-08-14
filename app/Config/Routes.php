@@ -64,13 +64,15 @@ $routes->group('dashboard', function($routes){
 
 $routes->group('blog', function($routes){
 
-    $routes->presenter('pelicula', ['only' => ['index','show'], 'controller' => 'Blog\Pelicula']);
+$routes->presenter('pelicula', ['only' => ['index','show'], 'controller' => 'Blog\Pelicula']);
+  //  $routes->get('etiquetas_por_categoria/(:num)', 'Blog\Pelicula::etiquetasPorCategoria/$1', ['as' => 'blog.pelicula.etiquetas_por_categoria'] );
 });
 
 $routes->group('api', ['namespace' => 'App\Controllers\Api'],function($routes){
 
 $routes->resource('pelicula');
 $routes->resource('categoria');
+$routes->get('etiquetas_por_categoria/(:num)', 'EtiquetaByCategoria::show/$1');
 
 
 });
