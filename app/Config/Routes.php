@@ -64,7 +64,10 @@ $routes->group('dashboard', function($routes){
 
 $routes->group('blog', function($routes){
 
-$routes->presenter('pelicula', ['only' => ['index','show'], 'controller' => 'Blog\Pelicula']);
+$routes->get('pelicula', 'Blog\Pelicula::index', ['as'=>'blog.pelicula.index']);
+$routes->get('pelicula/(:num)', 'Blog\Pelicula::show/$1', ['as'=>'blog.pelicula.show']);
+$routes->get('pelicula/categoria/(:num)', 'Blog\Pelicula::peliculasByCategoria/$1', ['as'=>'blog.peliculas.categoria']);
+$routes->get('pelicula/etiqueta/(:num)', 'Blog\Pelicula::peliculasByEtiqueta/$1', ['as'=>'blog.peliculas.etiqueta']);
   //  $routes->get('etiquetas_por_categoria/(:num)', 'Blog\Pelicula::etiquetasPorCategoria/$1', ['as' => 'blog.pelicula.etiquetas_por_categoria'] );
 });
 

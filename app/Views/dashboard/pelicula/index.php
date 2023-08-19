@@ -26,14 +26,7 @@
                 <td><?= $value['id'] ?></td>
                 <td><?= $value['titulo'] ?></td>
                 <td><?= $value['description'] ?></td>
-                <td><?php
-                    foreach ($categorias as $key => $c) {
-                        if ($c['id'] == $value['categoria_id']) {
-                            echo ($c['titulo']);
-                        }
-                    }
-
-                    ?></td>
+                <td><?= $value['categoria']?></td>
                 <td style="width: 100px;">   
                 <div class="d-flex align-items-center gap-1">              
                         <a class="btn btn-sm btn-success" href="<?=base_url()?>dashboard/pelicula/show/<?= $value['id']?>"><i class="fa fa-eye"></i></a>

@@ -19,13 +19,19 @@ class Pelicula extends BaseController
     $session = session();
     $user = $session->get('user');
     $peliculaModel = new PeliculaModel();
-    $peliculas = $peliculaModel ->paginate(5);
+    $peliculas = $peliculaModel ->select('peliculas.*, categorias.titulo as categoria')
+                                ->join('categorias', 'categorias.id = peliculas.categoria_id')
+                                ->paginate(5);
     $categoriaModel = new CategoriaModel();
     $categorias = $categoriaModel->find();
 
 
       
-       $data = ['nombreVariableVista'=>'Contenido', 'peliculas' => $peliculas, 'user' => $user, 'categorias'=>$categorias, 'pager'=>$peliculaModel->pager];
+       $data = ['nombreVariableVista'=>'Contenido', 
+                'peliculas' => $peliculas, 
+                'user' => $user, 
+                'categorias'=>$categorias, 
+                'pager'=>$peliculaModel->pager];
 
        
        return view('dashboard/pelicula/index', $data);
