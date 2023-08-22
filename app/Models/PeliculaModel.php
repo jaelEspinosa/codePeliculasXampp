@@ -21,7 +21,7 @@ public function getImagesById($id)
 }
 
 
-public function getEtiquetasById ($id)
+public function getEtiquetasById($id)
 {
   return $this->select('e.*')
   ->join('pelicula_etiqueta as pe', 'pe.pelicula_id = peliculas.id')

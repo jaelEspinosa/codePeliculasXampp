@@ -84,8 +84,7 @@ class Pelicula extends BaseController
       
     }
 
-
-
+    
     public function peliculasByCategoria($categoriaId)
     {
       $peliculaModel = new PeliculaModel();

@@ -72,10 +72,30 @@ $routes->get('pelicula/etiqueta/(:num)', 'Blog\Pelicula::peliculasByEtiqueta/$1'
 });
 
 $routes->group('api', ['namespace' => 'App\Controllers\Api'],function($routes){
+ 
+//**RUTAS PERSONALIZADAS PARA RELACIONES ENTRE PELICULAS Y CATEGORIAS */  
+$routes->get('pelicula/paginado', 'Pelicula::paginado');
+$routes->get('pelicula/paginado_full', 'Pelicula::paginado_full');
+$routes->get('pelicula/index_por_categoria/(:num)', 'Pelicula::index_por_categoria/$1');
+$routes->get('pelicula/index_por_etiqueta/(:num)', 'Pelicula::index_por_etiqueta/$1');
+$routes->post('pelicula/asignar_imagen/(:num)', 'Pelicula::asignar_imagen/$1');
+$routes->delete('pelicula/imagen_delete/(:num)', 'Pelicula::imagen_delete/$1');
 
+$routes->delete('pelicula/(:num)/etiqueta/(:num)/delete','PeliculaEtiqueta::etiqueta_delete/$1/$2'); 
+$routes->post('pelicula/etiqueta/(:num)','Pelicula::etiquetas_post/$1'); 
+
+//**CRUD DE PELICULAS */
 $routes->resource('pelicula');
+
+//**CRUD DE CATEGORIAS */
 $routes->resource('categoria');
-$routes->get('etiquetas_por_categoria/(:num)', 'EtiquetaByCategoria::show/$1');
+
+ //**CRUD DE ETIQUETAS */
+$routes->get('etiquetas', 'Etiquetas::index');
+$routes->post('etiquetas', 'Etiquetas::create');
+$routes->get('etiquetas/(:num)', 'Etiquetas::show/$1');
+$routes->put('etiquetas/(:num)', 'Etiquetas::update/$1');
+$routes->delete('etiquetas/(:num)', 'Etiquetas::delete/$1');
 
 
 });
