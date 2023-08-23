@@ -30,7 +30,7 @@ class DashboardFilter implements FilterInterface
         }
 
         if(session('type') == 'user') {
-            return redirect()->to(base_url().'blog');
+            return redirect()->to(base_url().'blog/pelicula');
           }
         
         if(session('type') != 'admin') {

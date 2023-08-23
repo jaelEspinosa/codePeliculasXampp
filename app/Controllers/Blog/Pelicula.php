@@ -20,7 +20,7 @@ class Pelicula extends BaseController
       
 
       $pelicula = new PeliculaModel();
-      $peliculas = $pelicula->select('peliculas.*, categorias.titulo as categoria, GROUP_CONCAT(DISTINCT(etiquetas.titulo)) as etiquetas, MAX(imagenes.imagen) as imagen')
+      $peliculas = $pelicula->select('peliculas.*, categorias.titulo as categoria, GROUP_CONCAT(DISTINCT(etiquetas.titulo)) as etiquetas, MIN(imagenes.imagen) as imagen')
                             ->join('categorias','categorias.id = peliculas.categoria_id')
                             ->join('pelicula_etiqueta','pelicula_etiqueta.pelicula_id = peliculas.id','left')
                             ->join('etiquetas','etiquetas.id = pelicula_etiqueta.etiqueta_id','left')

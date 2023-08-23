@@ -7,7 +7,7 @@
     
 <div class="d-flex align-items-center justify-content-between ">
     
-        <h1><?= $pelicula['titulo'] ?></h1>
+        <h4><?= $pelicula['titulo'] ?></h4>
         <a href="<?php echo base_url().'blog/pelicula'?>" class="btn btn-primary">volver</a>
     </div>
    
@@ -16,16 +16,20 @@
     
     
     <br>
-    <div style="height: calc(100vh - 450px);" class="row border tscroll rounded shadow mt-2">
+    <div style="
+                height: calc(100vh - 360px);  
+                overflow-y: scroll;             
+                " 
+                class="row border rounded shadow mt-2">
     <?php if(empty($images))  :?>
                 <div class="text-center" style="width: 12rem">                    
                     <img style="width:250px;" class="card-img-top" src="<?=base_url()?>uploads/peliculas/no_image.jpg" >  
                 </div> 
     <?php endif  ?>
         <?php foreach ($images as $i):?>         
-            <div class="col-2 d-flex align-items-center justify-content-start p-3">                
+            <div class="col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-start p-3">                
                 <div class="text-center " style="width: 12rem">                    
-                    <img class="card-img-top" src="<?=base_url()?>uploads/peliculas/<?= $i['imagen']?>" alt="<?=$i['extension']?>">  
+                    <img  style="width:150px;" src="<?=base_url()?>uploads/peliculas/<?= $i['imagen']?>" alt="<?=$i['extension']?>">  
                 </div>   
             </div>
         <?php endforeach ?>    

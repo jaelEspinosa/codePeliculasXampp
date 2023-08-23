@@ -52,10 +52,10 @@ class User extends BaseController
          // login ok redireccionamos al dashboard
 
          if($user['type']=='admin'){
-           return redirect()->to('dashboard/categoria')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
+           return redirect()->to('dashboard/pelicula')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
           }
           
-          return redirect()->to('blog')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
+          return redirect()->to('blog/pelicula')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
       }
          //contraseña fallida
         return redirect()->back()->with('Mensaje', 'usuario y/o contraseña no válidos');
@@ -104,7 +104,11 @@ class User extends BaseController
       session()->set('user_id', $user['id']);
       session()->set('username', $user['username']);
       session()->set('type', $user['type']);
-      return redirect()->to('/dashboard/pelicula')->with('Mensaje','Bienvenid@, '.$user['username']); 
+      if($user['type']=='admin'){
+        return redirect()->to('dashboard/pelicula')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
+       }
+       
+       return redirect()->to('blog/pelicula')->with('mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']); 
     }
       session()->setFlashdata([
          'validation' => $this->validator

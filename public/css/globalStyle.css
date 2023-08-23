@@ -67,7 +67,7 @@
 }
 
 .tscroll{
-    max-height: calc(100vh - 480px);
+    max-height: calc(100vh - 380px);
     overflow-y: scroll;
 }
 

@@ -2,14 +2,11 @@
 <?= $this->section('contenido') ?>
 
 
-<h2>Listado de peliculas</h2>
-<?php if ($user) : ?>
-    <h2>User: <?= $user['username'] ?></h2>
-<?php endif ?>
+
 
 <p><?php echo $nombreVariableVista ?></p>
 
-<a class="btn btn-primary mx-3 my-4" href="<?=base_url()?>dashboard/pelicula/new"><i class="fa fa-add"></i></a><span class="span">Nueva película</span>
+<a class="btn btn-primary mx-3 mb-1" href="<?=base_url()?>dashboard/pelicula/new"><i class="fa fa-add"></i></a><span class="span">Nueva película</span>
 <div class="border rounded shadow">
 
     <table class="table table-striped-columns">

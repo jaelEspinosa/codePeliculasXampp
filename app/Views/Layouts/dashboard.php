@@ -65,7 +65,7 @@
     </a>
 </div>
 
-<div class="border shadow-lg mb-5"></div>
+<div class="border shadow-lg mb-3"></div>
 
 <?php if (session('Mensaje')) : ?>
     <div class="tostada">

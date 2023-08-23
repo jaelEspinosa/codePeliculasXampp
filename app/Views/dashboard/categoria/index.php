@@ -1,13 +1,10 @@
 <?= $this->extend('Layouts/dashboard') ?>
 <?= $this->section('contenido') ?>
 <div class="container">
-
-    <h2>Listado de categorias</h2>
+    <h5>Listado de categorias</h5>
     <p><?php echo $nombreVariableVista ?></p>
 
-
-
-    <a class="btn btn-primary mx-3 my-4" href="<?=base_url()?>dashboard/categoria/new"><i class="fa fa-add"></i></a><span class="span">Nueva categoria</span>
+    <a class="btn btn-primary mx-3 mb-2" href="<?=base_url()?>dashboard/categoria/new"><i class="fa fa-add"></i></a><span class="span">Nueva categoria</span>
     <div class="border roundez shadow">
         <table class="table table-striped-columns">
             <tr>
@@ -21,7 +18,6 @@
                     <td><?= $value['id'] ?></td>
                     <td><?= $value['titulo'] ?></td>
                     <td class="d-flex align-items-center justify-content-around">
-                        <!-- <a class="btn btn-sm btn-success" href="/dashboard/categoria/show/<?= $value['id'] ?>">Show</a>  -->
                         <a class="btn btn-sm btn-primary" href="<?=base_url()?>dashboard/categoria/edit/<?= $value['id'] ?>"><i class="fa fa-edit"></i></a>
 
                         <form action="<?=base_url()?>dashboard/categoria/delete/<?= $value['id'] ?>" method="post">
